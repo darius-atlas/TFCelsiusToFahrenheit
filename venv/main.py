@@ -19,3 +19,7 @@ l0 = tf.keras.layers.Dense(units=1, input_shape=[1])
 model = tf.keras.Sequential([l0])
 
 
+model.compile(loss='mean_squared_error',
+              optimizer=tf.keras.optimizers.Adam(0.1))
+
+
