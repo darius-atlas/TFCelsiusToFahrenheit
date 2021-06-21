@@ -1,4 +1,5 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
+import matplotlib.pyplot as plt
 import tensorflow as tf
 tf.logging.set_verbosity(tf.logging.ERROR)
 
@@ -26,3 +27,6 @@ model.compile(loss='mean_squared_error',
 history = model.fit(celsius_q, fahrenheit_a, epochs=500, verbose=False)
 print("Завершили тренировку модели")
 
+plt.xlabel('Epoch')
+plt.ylabel('Loss')
+plt.plot(history.history['loss'])
